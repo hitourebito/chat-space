@@ -28,17 +28,16 @@
 
 ### Association
 - has_many :groups, through: members
-- has_many :messages
 - has_many :members
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|string|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|member_id|integer|null: false, foreign_key: true|
 
 ### Association
-- belong_to :user
+- belongs_to :member
 
 
 
