@@ -1,43 +1,43 @@
 # README
 
-##groupesテーブル
+## groupesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |member_id|integer|null: false, foreign_key: true|
 
-###Association
+### Association
 - has_many :users, through: members
 - has_many :members
 
-##membersテーブル
+## membersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
-###Association
+### Association
 - belongs_to :group
 - belongs_to :user
 
-##usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |mail|string|null: false|
 
-###Association
+### Association
 - has_many :groups, through: members
 - has_many :messages
 - has_many :members
 
-##messagesテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 
-###Association
+### Association
 - belong_to :user
 
 This README would normally document whatever steps are necessary to get the
