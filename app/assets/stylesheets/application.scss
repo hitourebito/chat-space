@@ -1,85 +1,69 @@
 @import "./reset";
 @import "./variable";
 
+//ヘッダー部分ここから
 header {
   p.header__menu {
-    background-color: #38AEF0;
-    color: #FFFFFF;
+    background-color: $partsColor;
+    color:   #FFFFFF;
     text-align: center;
   }
 }
+//ヘッダーここまで
 
+//サイドバー部分ここから
+  //サイドバー上部分ここから
 .sideBar {
   float: left;
+  width: 300px;
+  height: 100vh;
+  background-color: $sideBarGroupColor;
+  color: #FFFFFF;
+  font-weight: bold;
+
   .sideBar__user {
-    width: 300px;
-    height: 100%;
     background-color: $sideBarUserColor;
 
-      p.sideBar__userName {
-        color: #FFFFFF;
-        font-size: 16px;
-        font-weight: bold;
-        margin-left: 20px;
-        margin-right: 20px;
-        padding-top: 25px;
-        margin-bottom: 25px;
-      }
+    p.sideBar__user__name {
+      font-size: 16px;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
   }
+  //サイドバー上部分ここまで
+    //以下、処理が似ている部分はネスト考えてみる
+  //サイドバー下部分ここから
+  .sideBar__group-margin {
+    margin-left: 20px;
+    margin-right: 20px;
 
-  .sideBar__group {
-    height: 100vh;
-    background-color: $sideBarGroupColor;
-
-    p.sideBar__groupName1 {
-      color: #FFFFFF;
-      font-size: 16px;
-      font-weight: bold;
+    .sideBar__group__name1 {
+      font-size: 15px;
       padding-top: 20px;
-      margin-left: 20px;
-      margin-right: 20px;
+      padding-bottom: 5px;
     }
-
-    p.sideBar__groupName__message1 {
-      margin-top: 5px;
-      margin-left: 20px;
-      color: #FFFFFF;
+    .sideBar__group__message1 {
       font-size: 11px;
-      font-weight: bold;
     }
-
-    p.sideBar__groupName2 {
-      color: #FFFFFF;
-      font-size: 16px;
-      font-weight: bold;
-      padding-top: 40px;
-      margin-left: 20px;
-      margin-right: 20px;
+    .sideBar__group__name2 {
+      font-size: 15px;
+      padding-top: 20px;
+      padding-bottom: 5px;
     }
-
-    p.sideBar__groupName__message2 {
-      margin-top: 5px;
-      margin-left: 20px;
-      color: #FFFFFF;
+    .sideBar__group__message2 {
       font-size: 11px;
-      font-weight: bold; 
     }
-
-    p.sideBar__groupName3 {
-      color: #FFFFFF;
-      font-size: 16px;
-      font-weight: bold;
-      padding-top: 40px;
-      margin-left: 20px;
-      margin-right: 20px;
+    .sideBar__group__name3 {
+      font-size: 15px;
+      padding-top: 20px;
+      padding-bottom: 5px;
     }
-
-    p.sideBar__groupName__message3 {
-      margin-top: 5px;
-      margin-left: 20px;
-      color: #FFFFFF;
+    .sideBar__group__message3 {
       font-size: 11px;
-      font-weight: bold;
     }
   }
 }
+  //サイドバー下部分ここまで
+//サイドバー部分ここまで
