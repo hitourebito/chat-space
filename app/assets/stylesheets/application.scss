@@ -35,7 +35,17 @@ header {
       padding-top: 25px;
       padding-bottom: 25px;
     }
+        //アイコン部分ここから
+    .fa.fa-edit {
+      color: #FFFFFF;
+      float: right;
+    }
+    .fa.fa-cog {
+      color: #FFFFFF;
+      float: right;
+    }
   }
+        //アイコン部分ここまで
   //サイドバー上部分ここまで
     //以下、処理が似ている部分はネスト考えてみる
   //サイドバー下部分ここから
