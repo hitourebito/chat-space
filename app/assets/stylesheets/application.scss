@@ -74,7 +74,7 @@ header {
   //チャット画面上部分ここから
 .groupBox {
   height: 100vh;
-  width: calc(100vm - 300px);
+  width: calc(100vm-300px);
   background-color: #fafafafa;
   position: relative;
   z-index: 1;
@@ -138,8 +138,20 @@ header {
     height: 70px;
     background-color: gray;
 
-    
-    p.groupBox__footer__white {
+    li.groupBox__footer__sendButton {
+      float: right;
+      margin-right: 40px;
+      height: 50px;
+      width: 100px;
+      margin-top: 10px;
+      margin-left: 15px;
+      margin-bottom: 10px;
+      color: white;
+      background-color: $partsColor;
+      line-height: 50px;
+      text-align: center;
+    }
+    li.groupBox__footer__white {
       width: 65%;
       height: 50px;
       margin-top: 10px;
