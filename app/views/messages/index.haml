@@ -32,11 +32,13 @@
       %div.groupBox__chat
         %p.groupBox__chat__user test-user 
         %p.groupBox__chat__message こんにちは！
-      %ul.groupBox__footer
-        %li.groupBox__footer__sendButton Send
-        %li.groupBox__footer__white type a message
+      %div.groupBox__footer
+        %p.groupBox__footer__sendButton Send
+        %p.groupBox__footer__white 
+          type a message
+          %form_tag
+            %label.groupBox__footer__fileSend
+              %i.fa.fa-image
+                %input#fileSend{:type => "file"}
+         
         
-          
-      
-      
-
