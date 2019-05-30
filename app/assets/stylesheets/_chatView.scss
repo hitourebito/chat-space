@@ -1,0 +1,184 @@
+//ヘッダー部分ここから
+header {
+  p.header__menu {
+    background-color: $partsColor;
+    color:   #FFFFFF;
+    text-align: center;
+  }
+}
+//ヘッダー部分ここまで
+
+//サイドバー部分ここから
+  //サイドバー上部分ここから
+.sideBar {
+  float: left;
+  width: 300px;
+  height: 100vh;
+  background-color: $sideBarGroupColor;
+  color: #FFFFFF;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+
+  &__user {
+    background-color: $sideBarUserColor;
+
+    &__name {
+      font-size: 16px;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+        //アイコン部分ここから
+    .fa.fa-edit {
+      color: #FFFFFF;
+      float: right;
+    }
+    .fa.fa-cog {
+      color: #FFFFFF;
+      float: right;
+    }
+    //アイコン部分ここまで
+  }
+  //サイドバー上部分ここまで
+    //以下、処理が似ている部分はネスト考えてみる
+  //サイドバー下部分ここから
+  &__group {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    &__name1 {
+      font-size: 15px;
+      padding-top: 20px;
+      padding-bottom: 5px;
+    }
+    &__message1 {
+      font-size: 11px;
+    }
+    &__name2 {
+      font-size: 15px;
+      padding-top: 20px;
+      padding-bottom: 5px;
+    }
+    &__message2 {
+      font-size: 11px;
+    }
+    &__name3 {
+      font-size: 15px;
+      padding-top: 20px;
+      padding-bottom: 5px;
+    }
+    &__message3 {
+      font-size: 11px;
+    }
+  }
+}
+  //サイドバー下部分ここまで
+//サイドバー部分ここまで
+
+//チャット画面ここから
+  //チャット画面上部分ここから
+.groupBox {
+  height: 100vh;
+  width: calc(100vm-300px);
+  background-color: #fafafafa;
+  position: relative;
+  z-index: 1;
+  
+  &__member {
+    padding-left: 340px;
+    background-color: white;
+    border-bottom-style: solid;
+    border-bottom-color: #eeeeee;
+
+    &__title {
+      padding-top: 35px;
+      padding-bottom: 15px;
+      color: #333333;
+      font-size: 20px;
+    }
+    &__name {
+      font-size: 12px;
+    }
+    p.groupbox__member__edit {
+      float: right;
+      position: relative;
+      margin-top: 28px;
+      margin-right: 40px;
+      height: 40px; 
+      padding: 0 20px;
+      color: $partsColor;
+      border: thin;
+      border-style: solid;
+      border-color: $partsColor;
+      line-height: 40px;
+    }
+  }
+    //チャット画面上部分ここまで
+
+    //チャット画面中央部分ここから
+  .groupBox__chat {
+    margin-left: 340px;
+
+    &__user {
+      color: #434A54;
+      padding-top: 46px;
+      padding-bottom: 10px; 
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &__message {
+      color: #434A54;
+      padding-top: 10px;
+      padding-bottom: 40px; 
+    }
+  }
+    //チャット画面中央部分ここまで
+
+    //チャット画面下部ここから
+  .groupBox__footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100vmax;
+    height: 70px;
+    background-color: gray;
+
+    &__sendButton {
+      float: right;
+      margin-right: 40px;
+      height: 50px;
+      width: 100px;
+      margin-top: 10px;
+      margin-left: 15px;
+      margin-bottom: 10px;
+      color: white;
+      background-color: $partsColor;
+      line-height: 50px;
+      text-align: center;
+    }
+    &__white {
+      width: 65%;
+      height: 50px;
+      margin-top: 10px;
+      margin-left: 340px;
+      margin-bottom: 10px;
+      padding-left: 10px;
+      background-color: white;
+      font-size: 16px;
+      color: #434A54;
+      line-height: 50px;
+    }
+  
+    &__fileSend {
+      float: right;
+      margin-right: 10px;
+    }
+    #fileSend {
+      display: none;
+    }
+  }
+    //チャット画面下部ここまで
+  //チャット画面ここまで
+}
