@@ -20,10 +20,10 @@ header {
   position: relative;
   z-index: 2;
 
-  .sideBar__user {
+  &__user {
     background-color: $sideBarUserColor;
 
-    p.sideBar__user__name {
+    &__name {
       font-size: 16px;
       margin-left: 20px;
       margin-right: 20px;
@@ -39,37 +39,37 @@ header {
       color: #FFFFFF;
       float: right;
     }
+    //アイコン部分ここまで
   }
-        //アイコン部分ここまで
   //サイドバー上部分ここまで
     //以下、処理が似ている部分はネスト考えてみる
   //サイドバー下部分ここから
-  .sideBar__group-margin {
+  &__group {
     margin-left: 20px;
     margin-right: 20px;
 
-    .sideBar__group__name1 {
+    &__name1 {
       font-size: 15px;
       padding-top: 20px;
       padding-bottom: 5px;
     }
-    .sideBar__group__message1 {
+    &__message1 {
       font-size: 11px;
     }
-    .sideBar__group__name2 {
+    &__name2 {
       font-size: 15px;
       padding-top: 20px;
       padding-bottom: 5px;
     }
-    .sideBar__group__message2 {
+    &__message2 {
       font-size: 11px;
     }
-    .sideBar__group__name3 {
+    &__name3 {
       font-size: 15px;
       padding-top: 20px;
       padding-bottom: 5px;
     }
-    .sideBar__group__message3 {
+    &__message3 {
       font-size: 11px;
     }
   }
@@ -86,19 +86,19 @@ header {
   position: relative;
   z-index: 1;
   
-  .groupBox__member {
+  &__member {
     padding-left: 340px;
     background-color: white;
     border-bottom-style: solid;
     border-bottom-color: #eeeeee;
 
-    p.groupBox__member__title {
+    &__title {
       padding-top: 35px;
       padding-bottom: 15px;
       color: #333333;
       font-size: 20px;
     }
-    p.groupBox__member__name {
+    &__name {
       font-size: 12px;
     }
     p.groupbox__member__edit {
@@ -121,14 +121,14 @@ header {
   .groupBox__chat {
     margin-left: 340px;
 
-    .groupBox__chat__user {
+    &__user {
       color: #434A54;
       padding-top: 46px;
       padding-bottom: 10px; 
       font-size: 16px;
       font-weight: bold;
     }
-    .groupBox__chat__message {
+    &__message {
       color: #434A54;
       padding-top: 10px;
       padding-bottom: 40px; 
@@ -145,7 +145,7 @@ header {
     height: 70px;
     background-color: gray;
 
-    p.groupBox__footer__sendButton {
+    &__sendButton {
       float: right;
       margin-right: 40px;
       height: 50px;
@@ -158,7 +158,7 @@ header {
       line-height: 50px;
       text-align: center;
     }
-    p.groupBox__footer__white {
+    &__white {
       width: 65%;
       height: 50px;
       margin-top: 10px;
@@ -171,7 +171,7 @@ header {
       line-height: 50px;
     }
   
-    .groupBox__footer__fileSend {
+    &__fileSend {
       float: right;
       margin-right: 10px;
     }
