@@ -3,8 +3,8 @@
 .sideBar
   .sideBar__user
     %p.sideBar__user__name 
-      test 
-      = link_to do 
+      = current_user.name
+      = link_to new_group_path do
         %i.fa.fa-cog
       = link_to do 
         %i.fa.fa-edit
