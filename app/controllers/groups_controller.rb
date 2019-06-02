@@ -14,10 +14,6 @@ class GroupsController < ApplicationController
     end
   end
 
-  def method_name
-    
-  end
-
   def edit
     
   end
