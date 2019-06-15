@@ -1,5 +1,3 @@
-%header
-  %p.header__menu グループを作成しました。
 .sideBar
   .sideBar__user
     %p.sideBar__user__name 
@@ -11,12 +9,12 @@
     
   .sideBar__group
     .sideBar__group-margin
-      %p.sideBar__group__name1 test-group
-      %p.sideBar__group__message1 Hello
-      %p.sideBar__group__name2 test-group
-      %p.sideBar__group__message2 Good afternoon
-      %p.sideBar__group__name3 example
-      %p.sideBar__group__message3 まだメッセージがありません
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
   
 .groupBox
   .groupBox__member
