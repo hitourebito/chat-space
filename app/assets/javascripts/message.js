@@ -1,4 +1,8 @@
 $(function(){
+  function buildCreate(message){
+    var html = ''
+    return html;
+  }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -10,6 +14,12 @@ $(function(){
       dataType: 'json',
       processData: false,
       contentType: false
+    })
+    .done(function(message){
+      
+    })
+    .fail(function(){
+
     })
   })
 }); 
