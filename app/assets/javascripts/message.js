@@ -23,9 +23,11 @@ $(function(){
     .done(function(message){
       var html = buildCreate(message);
       $('.messages').append(html)
+      $('.form__submit').removeAttr("disabled");
     })
     .fail(function(){
-
+      alert("メッセージか画像情報が入力されていません");
+      $('.form__submit').removeAttr("disabled");
     })
   })
 }); 
