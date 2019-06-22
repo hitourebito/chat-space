@@ -1,3 +1,6 @@
 $(function(){
-  console.log("OK")
+  $().on('submit', function(e){
+    e.preventDefault();
+    
+  })
 });
