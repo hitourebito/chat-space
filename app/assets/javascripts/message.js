@@ -1,6 +1,11 @@
 $(function(){
   function buildCreate(message){
-    var html = ''
+    var html = `<div class="low-message">
+                  <p class="lower-message__content">
+                    ${message.content}
+                  </p>
+    
+                </div>`
     return html;
   }
   $('#new_message').on('submit', function(e){
@@ -16,7 +21,8 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      
+      var html = buildCreate(message);
+      $('.messages').append(html)
     })
     .fail(function(){
 
