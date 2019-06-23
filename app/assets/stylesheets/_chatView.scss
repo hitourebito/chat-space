@@ -134,17 +134,14 @@
   .groupBox__footer {
     position: absolute;
     bottom: 0;
-    right: 0;
     width: 100vmax;
     height: 70px;
     background-color: gray;
 
-    &__sendButton {
-      float: right;
+    .form__submit {
       margin-right: 40px;
       height: 50px;
       width: 100px;
-      margin-top: 10px;
       margin-left: 15px;
       margin-bottom: 10px;
       color: white;
@@ -159,12 +156,23 @@
       margin-left: 340px;
       margin-bottom: 10px;
       padding-left: 10px;
-      background-color: white;
       font-size: 16px;
       color: #434A54;
       line-height: 50px;
     }
   
+    .form__mask {
+      float: right;
+
+      .icon {
+        background-color: white;
+      }
+
+      .hidden {
+        display: none;
+      }
+    }
+
     &__fileSend {
       float: right;
       margin-right: 10px;

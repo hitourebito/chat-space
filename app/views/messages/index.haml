@@ -21,20 +21,17 @@
     %p.groupbox__member__edit Edit
     %p.groupBox__member__title test-group
     %p.groupBox__member__name Members:
-    
+
   .messages
     = render @messages
   .groupBox__footer
-    %p.groupBox__footer__sendButton Send
-    %p.groupBox__footer__white 
-      type a message
+    .groupBox__footer__white 
       //以下、カリキュラムを参考
-  .form
-    = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-      .form__mask
-        = f.label :image, class: 'form__mask__image' do
-          = fa_icon 'picture-o', class: 'icon'
-          =f.file_field :image, class: 'hidden'
-      =f.submit 'Send', class: 'form__submit'
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            =f.file_field :image, class: 'hidden'
+          =f.submit 'Send', class: 'form__submit'
 
