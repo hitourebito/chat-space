@@ -2,9 +2,9 @@
   .sideBar__user
     %p.sideBar__user__name 
       = current_user.name
-      = link_to new_group_path do
+      = link_to edit_user_path(:id) do
         %i.fa.fa-cog
-      = link_to do 
+      = link_to new_group_path do
         %i.fa.fa-edit
     
   .sideBar__group

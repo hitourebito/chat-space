@@ -1,7 +1,7 @@
 $(function(){
   function buildCreate(message){
     var html = `<div class="low-message">
-                  <p class="lower-message__content">
+                  <p class="lower-message__content" id="addLine">
                     ${message.content}
                   </p>
     
@@ -24,10 +24,17 @@ $(function(){
       var html = buildCreate(message);
       $('.messages').append(html)
       $('.form__submit').removeAttr("disabled");
+      $(function(){
+        $('#addLine').animate({
+          'marginTop':'50px'
+        }, 1000)
+      })
     })
     .fail(function(){
       alert("メッセージか画像情報が入力されていません");
       $('.form__submit').removeAttr("disabled");
+
+
     })
   })
 }); 

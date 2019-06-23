@@ -161,11 +161,17 @@
       line-height: 50px;
     }
   
+    .form__message {
+      width: 750px;
+    }
+
     .form__mask {
       float: right;
 
       .icon {
         background-color: white;
+        width: 20px;
+        height: 20px;
       }
 
       .hidden {
