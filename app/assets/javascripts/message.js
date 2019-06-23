@@ -2,7 +2,7 @@ $(function(){
   function buildCreate(message){
     var html = `<div class="message">
                   <div class="up-message">
-                    <div class="up-message__user-name">
+                    <div class="up-message__user-name" id="bottom_message">
                       ${message.name}
                     </div>
                     <div class="up-message__date">
@@ -13,6 +13,8 @@ $(function(){
                     <p class="lower-message__content">
                       ${message.content}
                     </p>
+
+                    <img class="lower-message__image" src="${message.image}">
     
                   </div>
                 </div>`
@@ -35,17 +37,12 @@ $(function(){
       var html = buildCreate(message);
       $('.messages').append(html)
       $('.form__submit').removeAttr("disabled");
-      $(function(){
-        $('#addLine').animate({
-          'marginTop':'10px'
-        }, 1000)
-      })
+      $('.messages').animate({scrollTop: $('#bottom_message').offset().top}, 500);
     })
     .fail(function(){
+      console.log("NO");
       alert("メッセージか画像情報が入力されていません");
       $('.form__submit').removeAttr("disabled");
-
-
     })
   })
 }); 
