@@ -1,10 +1,20 @@
 $(function(){
   function buildCreate(message){
-    var html = `<div class="low-message">
-                  <p class="lower-message__content" id="addLine">
-                    ${message.content}
-                  </p>
+    var html = `<div class="message">
+                  <div class="up-message">
+                    <div class="up-message__user-name">
+                      ${message.name}
+                    </div>
+                    <div class="up-message__date">
+                      ${message.created_at}
+                    </div>
+                  </div>
+                  <div class="low-message">
+                    <p class="lower-message__content">
+                      ${message.content}
+                    </p>
     
+                  </div>
                 </div>`
     return html;
   }
@@ -21,12 +31,13 @@ $(function(){
       contentType: false
     })
     .done(function(message){
+      console.log("OK");
       var html = buildCreate(message);
       $('.messages').append(html)
       $('.form__submit').removeAttr("disabled");
       $(function(){
         $('#addLine').animate({
-          'marginTop':'50px'
+          'marginTop':'10px'
         }, 1000)
       })
     })

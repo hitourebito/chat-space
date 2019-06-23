@@ -1,3 +1,3 @@
-json.created_at @message.created_at
+json.created_at @message.created_at.strftime("%Y/%m/%d %H:%M")
 json.content @message.content
-json.message.user.name @message.user.name
+json.name @message.user.name
