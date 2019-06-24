@@ -13,9 +13,7 @@ $(function(){
                     <p class="lower-message__content">
                       ${message.content}
                     </p>
-
-                    <img class="lower-message__image" src="${message.image}">
-    
+                    <img src=${message.image} alt="">
                   </div>
                 </div>`
     return html;
@@ -36,6 +34,8 @@ $(function(){
       console.log("OK");
       var html = buildCreate(message);
       $('.messages').append(html)
+      $('#message_content').val("")
+      $('.hidden').val("")
       $('.form__submit').removeAttr("disabled");
       $('.messages').animate({scrollTop: $('#bottom_message').offset().top}, 500);
     })
