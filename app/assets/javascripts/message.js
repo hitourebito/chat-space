@@ -2,7 +2,7 @@ $(function(){
   function buildCreate(message){
     var html = `<div class="message">
                   <div class="up-message">
-                    <div class="up-message__user-name" id="bottom_message">
+                    <div class="up-message__user-name">
                       ${message.name}
                     </div>
                     <div class="up-message__date">
@@ -13,7 +13,9 @@ $(function(){
                     <p class="lower-message__content">
                       ${message.content}
                     </p>
+                    
                     <img src=${message.image} alt="">
+
                   </div>
                 </div>`
     return html;
@@ -37,7 +39,7 @@ $(function(){
       $('#message_content').val("")
       $('.hidden').val("")
       $('.form__submit').removeAttr("disabled");
-      $('.messages').animate({scrollTop: $('#bottom_message').offset().top}, 500);
+      $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 500);
     })
     .fail(function(){
       console.log("NO");
