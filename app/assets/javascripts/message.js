@@ -33,7 +33,6 @@ $(function(){
       contentType: false
     })
     .done(function(message){
-      console.log("OK");
       var html = buildCreate(message);
       $('.messages').append(html)
       $('#message_content').val("")
@@ -42,7 +41,6 @@ $(function(){
       $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 500);
     })
     .fail(function(){
-      console.log("NO");
       alert("メッセージか画像情報が入力されていません");
       $('.form__submit').removeAttr("disabled");
     })
