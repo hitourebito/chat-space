@@ -34,11 +34,10 @@ $(function(){
     })
     .done(function(message){
       var html = buildCreate(message);
-      $('.messages').append(html)
-      $('#message_content').val("")
-      $('.hidden').val("")
+      $('.messages').append(html);
       $('.form__submit').removeAttr("disabled");
       $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 500);
+      $('#new_message')[0].reset();
     })
     .fail(function(){
       alert("メッセージか画像情報が入力されていません");
