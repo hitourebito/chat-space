@@ -42,30 +42,6 @@
     margin-left: 20px;
     margin-right: 20px;
 
-    &__name1 {
-      font-size: 15px;
-      padding-top: 20px;
-      padding-bottom: 5px;
-    }
-    &__message1 {
-      font-size: 11px;
-    }
-    &__name2 {
-      font-size: 15px;
-      padding-top: 20px;
-      padding-bottom: 5px;
-    }
-    &__message2 {
-      font-size: 11px;
-    }
-    &__name3 {
-      font-size: 15px;
-      padding-top: 20px;
-      padding-bottom: 5px;
-    }
-    &__message3 {
-      font-size: 11px;
-    }
   }
 }
   //サイドバー下部分ここまで
@@ -112,39 +88,53 @@
     //チャット画面上部分ここまで
 
     //チャット画面中央部分ここから
-  .groupBox__chat {
-    margin-left: 340px;
+  
+    .messages {
+      background-color: #FAFAFA;
+      box-sizing: border-box;
+      padding: 46px 40px 0;
+      height: calc(100% - 100px - 90px);
+      overflow: scroll;
+      .message {
+        .upper-message {
+          display: flex;
+          &__user-name {
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &__date {
+            color: lightgray;
+            font-size: 12px;
+            padding-left: 10px;
+          }
+        }
+        .lower-message {
+          margin-top: 10px;
+          &__content {
+            color: black;
+            font-size: 14px;
+            margin-bottom: 40px;
+          }
+        }
+      }
+    }
 
-    &__user {
-      color: #434A54;
-      padding-top: 46px;
-      padding-bottom: 10px; 
-      font-size: 16px;
-      font-weight: bold;
-    }
-    &__message {
-      color: #434A54;
-      padding-top: 10px;
-      padding-bottom: 40px; 
-    }
-  }
+
     //チャット画面中央部分ここまで
 
     //チャット画面下部ここから
   .groupBox__footer {
     position: absolute;
     bottom: 0;
-    right: 0;
     width: 100vmax;
     height: 70px;
     background-color: gray;
 
-    &__sendButton {
-      float: right;
+    .form__submit {
       margin-right: 40px;
       height: 50px;
       width: 100px;
-      margin-top: 10px;
       margin-left: 15px;
       margin-bottom: 10px;
       color: white;
@@ -159,12 +149,29 @@
       margin-left: 340px;
       margin-bottom: 10px;
       padding-left: 10px;
-      background-color: white;
       font-size: 16px;
       color: #434A54;
       line-height: 50px;
     }
   
+    .form__message {
+      width: 750px;
+    }
+
+    .form__mask {
+      float: right;
+
+      .icon {
+        background-color: white;
+        width: 20px;
+        height: 20px;
+      }
+
+      .hidden {
+        display: none;
+      }
+    }
+
     &__fileSend {
       float: right;
       margin-right: 10px;
