@@ -6,13 +6,13 @@ $(function() {
                   <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
                 </div>`
     $('#user-search-result').append(html);
+    return html;
   }
 
   function appendErrMsgToHTML(msg){
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${msg}</p>
                 </div>`
-    $('#user-search-result').empty();
     $('#user-search-result').append(html);
   }
 
@@ -54,17 +54,15 @@ $(function() {
   });
 
 $(function(){
-  $("#user-search-result").on("click", ".user-search-add.chat-group-user__btn.chat-group-user__btn--add", function(e){
-    //確認用console.log
-    console.log(this);
+  $("#user-search-result").on("click", ".user-search-add", function(){
     var name = $(this).data("user-name");
     var user_id = $(this).data("user-id");
     $(this).parent().remove();
     appendChatMembers(name, user_id);
   });
 
-  $("#add-chat-members").on("click", ".chat-group-user.clearfix.js-chat-member", function(){
+  $("#add-chat-members").on("click", ".user-search-remove", function(){
     $(this).parent().remove();
-  })
+  });
  });
 });
