@@ -20,6 +20,7 @@ $(function() {
   $("#user-search-field").on("keyup", function(e) {
     e.preventDefault();
     var input = $("#user-search-field").val();
+    //確認用console.log
     console.log(input);
     
     $.ajax({
@@ -28,8 +29,6 @@ $(function() {
       data: { keyword: input },
       dataType: 'json'
     })
-
-    
     .done(function(users){
       if (users.length !== 0) {
         users.forEach(function(user){
@@ -37,11 +36,16 @@ $(function() {
         });
       }
       else {
-        appendErrMsgToHTML("ユーザー検索に失敗しました");
+        appendErrMsgToHTML("該当するユーザーはいません");
       }
     })
     .fail(function(){
       alert("ユーザー検索に失敗しました");
     })
+  });
+  $("#user-search-result").on("click", ".user-search-add.chat-group-user__btn.chat-group-user__btn--add", function(e){
+    e.preventDefault;
+    //確認用console.log
+    console.log("OK");
   });
 });
