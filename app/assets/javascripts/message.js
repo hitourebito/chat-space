@@ -20,6 +20,29 @@ $(function(){
                 </div>`
     return html;
   }
+
+  function buildHTML(message) {
+    image = (message.image) ? `<img class= "lower-message__image" src=${message.image} >` : "";
+
+    var html = `<div class="message" data-message-id="${message.id}"> 
+                  <div class="upper-message">
+                    <div class="upper-message__user-name">
+                      ${message.user_name}
+                    </div>
+                    <div class="upper-message__date">
+                      ${message.date}
+                    </div>
+                  </div>
+                  <div class="lower-meesage">
+                    <p class="lower-message__content">
+                      ${message.content}
+                    </p>
+                    ${image}
+                  </div>
+                </div>`
+    return html;
+  }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -43,5 +66,23 @@ $(function(){
       alert("メッセージか画像情報が入力されていません");
       $('.form__submit').removeAttr("disabled");
     })
-  })
+
+    //自動更新ここから
+    var reloadMessages = function() {
+
+      last_message_id = $('.message:last').data("message-id");
+      $.ajax({ 
+        url: "api/messages",
+        type: 'get',
+        dataType: 'json',
+        data: {id: last_message_id}//
+      })
+      .done(function(messages) {
+        console.log('success');
+      })
+      .fail(function() {
+        console.log('error');
+      });
+    };
+  });
 }); 
