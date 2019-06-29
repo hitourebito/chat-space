@@ -25,15 +25,15 @@ $(function(){
     image = (message.image) ? `<img class= "lower-message__image" src=${message.image} >` : "";
 
     var html = `<div class="message" data-message-id="${message.id}"> 
-                  <div class="upper-message">
-                    <div class="upper-message__user-name">
+                  <div class="up-message">
+                    <div class="up-message__user-name">
                       ${message.user_name}
                     </div>
-                    <div class="upper-message__date">
-                      ${message.date}
+                    <div class="up-message__date">
+                      ${message.created_at}
                     </div>
                   </div>
-                  <div class="lower-meesage">
+                  <div class="low-meesage">
                     <p class="lower-message__content">
                       ${message.content}
                     </p>
