@@ -11,9 +11,9 @@
     .sideBar__group-margin
       - current_user.groups.each do |group|
         = link_to group_messages_path(group) do
-          .group__name
+          .sideBar__group-margin__name
             = group.name
-          .group__message
+          .sideBar__group-margin__message
             = group.show_last_message
   
 .groupBox

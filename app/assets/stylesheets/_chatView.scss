@@ -35,13 +35,15 @@
     }
     //アイコン部分ここまで
   }
+
   //サイドバー上部分ここまで
     //以下、処理が似ている部分はネスト考えてみる
   //サイドバー下部分ここから
-  &__group {
-    margin-left: 20px;
-    margin-right: 20px;
-
+  &__group-margin__name {
+    color: #FFFFFF; 
+  }
+  &__group-margin__message {
+    color: #FFFFFF; 
   }
 }
   //サイドバー下部分ここまで
