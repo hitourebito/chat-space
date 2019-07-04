@@ -10,28 +10,31 @@
   height: 100vh;
   background-color: $sideBarUserColor;
   color: #FFFFFF;
-  font-weight: bold;
+
   position: relative;
   z-index: 2;
 
   &__user {
     background-color: $sideBarGroupColor;
+    height: 100px;
+    line-height: 100px;
+    padding: 0 20px;
 
     &__name {
       font-size: 16px;
-      margin-left: 20px;
-      margin-right: 20px;
-      padding-top: 25px;
-      padding-bottom: 25px;
+      font-weight: bold;
     }
         //アイコン部分ここから
     .fa.fa-edit {
       color: #FFFFFF;
       float: right;
+      line-height: 100px;
+      margin-right: 5px;
     }
     .fa.fa-cog {
       color: #FFFFFF;
       float: right;
+      line-height: 100px;
     }
     //アイコン部分ここまで
   }
@@ -39,11 +42,24 @@
   //サイドバー上部分ここまで
     //以下、処理が似ている部分はネスト考えてみる
   //サイドバー下部分ここから
-  &__group-margin__name {
-    color: #FFFFFF; 
-  }
-  &__group-margin__message {
-    color: #FFFFFF; 
+  &__group {
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+
+    &-margin {
+      box-sizing: border-box;
+      padding: 20px 0 40px;
+
+      &__name {
+        color: #FFFFFF; 
+        font-size: 15px;
+      }
+      &__message {
+        color: #FFFFFF; 
+        font-size: 11px;
+        margin-top: 5px;
+      }
+    }
   }
 }
   //サイドバー下部分ここまで

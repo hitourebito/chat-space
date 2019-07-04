@@ -8,8 +8,8 @@
         %i.fa.fa-edit
     
   .sideBar__group
-    .sideBar__group-margin
-      - current_user.groups.each do |group|
+    - current_user.groups.each do |group|
+      .sideBar__group-margin
         = link_to group_messages_path(group) do
           .sideBar__group-margin__name
             = group.name
