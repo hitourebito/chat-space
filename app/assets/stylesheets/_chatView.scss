@@ -8,14 +8,14 @@
   float: left;
   width: 300px;
   height: 100vh;
-  background-color: $sideBarGroupColor;
+  background-color: $sideBarUserColor;
   color: #FFFFFF;
   font-weight: bold;
   position: relative;
   z-index: 2;
 
   &__user {
-    background-color: $sideBarUserColor;
+    background-color: $sideBarGroupColor;
 
     &__name {
       font-size: 16px;
