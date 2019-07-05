@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function() {
   function buildCreate(message){
     var html = `<div class="message">
                   <div class="up-message">
