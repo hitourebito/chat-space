@@ -18,7 +18,8 @@
   
 .groupBox
   .groupBox__member
-    %p.groupbox__member__edit Edit
+    %p.groupbox__member__edit
+      = link_to "Edit", edit_group_path(params[:group_id]), method: :get
     %p.groupBox__member__title
       = @group.name
     %p.groupBox__member__name 
