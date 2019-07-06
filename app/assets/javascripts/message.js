@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function() {
   function buildCreate(message){
-    var html = `<div class="message">
+    var html = `<div class="message" data-message-id="${message.id}">
                   <div class="up-message">
                     <div class="up-message__user-name">
                       ${message.name}
