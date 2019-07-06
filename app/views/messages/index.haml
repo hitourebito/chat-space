@@ -1,42 +1,50 @@
-.sideBar
-  .sideBar__user
-    %p.sideBar__user__name 
-      = current_user.name
-      = link_to edit_user_path(:id), data: {"turbolinks"=> false} do
-        %i.fa.fa-cog
-      = link_to new_group_path do
-        %i.fa.fa-edit
-    
-  .sideBar__group
-    - current_user.groups.each do |group|
-      .sideBar__group-margin
+.wrapper
+
+  .side-bar
+    .header
+      %h3.header__name
+        = current_user.name
+      %ul.header__lists
+        %li.list
+          = link_to edit_user_path(:id), data: {"turbolinks"=> false} do
+            %i.fa.fa-cog
+        %li.list
+          = link_to new_group_path do
+            %i.fa.fa-edit
+      
+    .groups
+      .group
+      - current_user.groups.each do |group|
         = link_to group_messages_path(group) do
-          .sideBar__group-margin__name
+          .group__name
             = group.name
-          .sideBar__group-margin__message
+          .group__message
             = group.show_last_message
   
-.groupBox
-  .groupBox__member
-    %p.groupbox__member__edit
-      = link_to "Edit", edit_group_path(params[:group_id]), method: :get, class: 'edit__button'
-    %p.groupBox__member__title
-      = @group.name
-    %p.groupBox__member__name 
-      Member :
-      - @members.each do |member|
-        = member.name
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          = @group.name
+        %ul.left-header__members
+          Member :
+          - @members.each do |member|
+            = member.name
+      .right-header
+        .right-header__button
+          = link_to "Edit", edit_group_path(params[:group_id]), method: :get, class: 'edit__button'
+        
 
-  .messages
-    = render @messages
-  .groupBox__footer
-    .groupBox__footer__white
-      //以下、カリキュラムを参考
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-        .form__mask
-          = f.label :image, class: 'form__mask__image' do
-            = fa_icon 'picture-o', class: 'icon'
-            =f.file_field :image, class: 'hidden'
+    .messages
+      = render @messages
+    .groupBox__footer
+      .groupBox__footer__white
+        //以下、カリキュラムを参考
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          .form__mask
+            = f.label :image, class: 'form__mask__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              =f.file_field :image, class: 'hidden'
           =f.submit 'Send', class: 'form__submit'
 
