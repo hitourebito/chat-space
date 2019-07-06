@@ -23,7 +23,7 @@ $(document).on('turbolinks:load', function() {
 
                   <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
                 </div>`
-    $("#add-chat-members").append(html);
+    $("#chat-group-users").append(html);
   }
 
   $("#user-search-field").on("keyup", function(e) {
@@ -45,7 +45,6 @@ $(document).on('turbolinks:load', function() {
       }
       else {
         appendErrMsgToHTML("該当するユーザーはいません");
-        $('#user-search-result').empty();
       }
     })
     .fail(function(){
@@ -61,7 +60,7 @@ $(function(){
     appendChatMembers(name, user_id);
   });
 
-  $("#add-chat-members").on("click", ".user-search-remove", function(){
+  $("#chat-group-users").on("click", ".user-search-remove", function(){
     $(this).parent().remove();
   });
  });
