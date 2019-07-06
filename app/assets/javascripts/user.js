@@ -40,7 +40,9 @@ $(document).on('turbolinks:load', function() {
       $('#user-search-result').empty();
       if (users.length !== 0) {
         users.forEach(function(user){
+          if (input.length !== 0) {
           appendUser(user);
+          }
         });
       }
       else {
