@@ -19,7 +19,7 @@
 .groupBox
   .groupBox__member
     %p.groupbox__member__edit
-      = link_to "Edit", edit_group_path(params[:group_id]), method: :get
+      = link_to "Edit", edit_group_path(params[:group_id]), method: :get, class: 'edit__button'
     %p.groupBox__member__title
       = @group.name
     %p.groupBox__member__name 
@@ -30,7 +30,7 @@
   .messages
     = render @messages
   .groupBox__footer
-    .groupBox__footer__white 
+    .groupBox__footer__white
       //以下、カリキュラムを参考
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
