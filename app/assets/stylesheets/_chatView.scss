@@ -69,7 +69,7 @@
   //チャット画面上部分ここから
 .groupBox {
   height: 100vh;
-  width: calc(100vm-300px);
+  width: calc(100%-300px);
   background-color: #fafafafa;
   position: relative;
   z-index: 1;
@@ -101,6 +101,11 @@
       border-style: solid;
       border-color: $partsColor;
       line-height: 40px;
+    }
+
+    .edit__button {
+      text-decoration: none;
+      color: $partsColor;
     }
   }
     //チャット画面上部分ここまで
@@ -144,13 +149,14 @@
     //チャット画面下部ここから
   .groupBox__footer {
     position: absolute;
-    bottom: 0;
-    width: 100vmax;
+    max-height: 70px;
     height: 70px;
+    max-height: 70px;
+    bottom: 0;
+    width: 100%;
     background-color: gray;
 
     .form__submit {
-      margin-right: 40px;
       height: 50px;
       width: 100px;
       margin-left: 15px;
@@ -161,7 +167,8 @@
       text-align: center;
     }
     &__white {
-      width: 65%;
+      background-color: white;
+      width: 73%;
       height: 50px;
       margin-top: 10px;
       margin-left: 340px;
@@ -173,14 +180,14 @@
     }
   
     .form__message {
-      width: 750px;
+      width: 50%;
+      border: none;
     }
 
     .form__mask {
       float: right;
 
       .icon {
-        background-color: white;
         width: 20px;
         height: 20px;
       }
@@ -191,7 +198,6 @@
     }
 
     &__fileSend {
-      float: right;
       margin-right: 10px;
     }
     #fileSend {
