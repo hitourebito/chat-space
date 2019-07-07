@@ -1,10 +1,17 @@
+@import "font-awesome";
+@import "config/colors";
+@import "config/font-size"; //hamlとscss書き換え後に追加
+@import "./variable";
 
 @import "./reset";
-@import "./variable";
-@import "chatView";
-@import "font-awesome";
+@import "mixins/mixin";//hamlとscss書き換え後に追加
+@import "mixins/vendor_prefix";//hamlとscss書き換え後に追加
+
 @import "./user";
-@import "config/colors";
 @import "modules/flash";
 @import "modules/group";
-@import "modules/side_bar.scss";
+
+@import "messages/messages.scss";//hamlとscss書き換え後に追加
+@import "modules/side_bar";
+@import "chatView";//hamlとscss書き換え後に追加
+

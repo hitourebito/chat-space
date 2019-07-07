@@ -1,18 +1,122 @@
-//ヘッダー部分ここから
+.chat {
+  width: calc(100% - 300px);
+  min-width: 500px;
+  .header {
+    box-sizing: border-box;
+    height: 100px;
+    padding: 0 40px;
+    .left-header {
+      float: left;
+      &__title {
+        color: #333;
+        font-size: 20px;
+        margin-top: 35px;
+      }
+      &__members {
+        @include flexbox;
+        color: $light_gray;
+        font-size: 12px;
+        margin-top: 15px;
+        .member {
+          display: inline-block;
+          padding-right: 5px;
+        }
+      }
+    }
+    .right-header {
+      border: 1px solid $light_blue;
+      color: $light_blue;
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      &__button {
+        color: $light_blue;
+        text-decoration: none;
+      }
+    }
+  }
 
-//ヘッダー部分ここまで
+  .messages {
+    background-color: #FAFAFA;
+    box-sizing: border-box;
+    padding: 46px 40px 0;
+    height: calc(100vh - 100px - 90px);
+    overflow: scroll;
+    .message {
+      .upper-message {
+        display: flex;
+        &__user-name {
+          color: $black;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date {
+          color: $light_gray;
+          font-size: 12px;
+          padding-left: 10px;
+        }
+      }
+      .lower-message {
+        margin-top: 10px;
+        &__content {
+          color: $black;
+          font-size: 14px;
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  .form {
+    background-color: #DDDDDD;
+    box-sizing: border-box;
+    height: 90px;
+    padding: 20px 50px 20px 40px;
+
+    &__message {
+      border: none;
+      float: left;
+      height: 50px;
+      width: calc(100% - 150px);
+    }
+    &__mask {
+      background-color: $white;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      &__image {
+        font-size: 20px;
+        line-height: 50px;
+      }
+      .hidden {
+        display: none;
+      }
+    }
+    &__submit {
+      background-color: $light_blue;
+      border: none;
+      color: $white;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
+    }
+  }
+}
+
+/* haml,scss書き直し前はgitを参照
 
 //サイドバー部分ここから
   //サイドバー上部分ここから
 .sideBar {
   float: left;
   width: 300px;
-  height: 100vh;
+  height: 100%;
   background-color: $sideBarUserColor;
   color: #FFFFFF;
-
-  position: relative;
-  z-index: 2;
 
   &__user {
     background-color: $sideBarGroupColor;
@@ -68,17 +172,17 @@
 //チャット画面ここから
   //チャット画面上部分ここから
 .groupBox {
-  height: 100vh;
-  width: calc(100%-300px);
-  background-color: #fafafafa;
-  position: relative;
-  z-index: 1;
+  float: right;
+  height: 100%;
+  // width: calc(100vw-300px);
+  // background-color: #fafafafa;
   
   &__member {
-    padding-left: 340px;
+    // padding-left: 340px;
     background-color: white;
     border-bottom-style: solid;
     border-bottom-color: #eeeeee;
+    height: 100px;
 
     &__title {
       padding-top: 35px;
@@ -114,10 +218,11 @@
   
     .messages {
       background-color: #FAFAFA;
-      box-sizing: border-box;
-      padding: 46px 40px 0;
-      height: calc(100% - 100px - 90px);
+      // padding: 46px 40px 0;
+      height: calc(100% - 190px);
+      width: 100%;
       overflow: scroll;
+      -webkit-overflow-scrolling: touch;
       .message {
         .upper-message {
           display: flex;
@@ -148,11 +253,7 @@
 
     //チャット画面下部ここから
   .groupBox__footer {
-    position: absolute;
-    max-height: 70px;
-    height: 70px;
-    max-height: 70px;
-    bottom: 0;
+    height: 90px;
     width: 100%;
     background-color: gray;
 
@@ -168,10 +269,10 @@
     }
     &__white {
       background-color: white;
-      width: 73%;
+      // width: 73%;
       height: 50px;
       margin-top: 10px;
-      margin-left: 340px;
+      // margin-left: 340px;
       margin-bottom: 10px;
       padding-left: 10px;
       font-size: 16px;
@@ -180,7 +281,7 @@
     }
   
     .form__message {
-      width: 50%;
+      // width: 50%;
       border: none;
     }
 
@@ -206,4 +307,5 @@
   }
     //チャット画面下部ここまで
   //チャット画面ここまで
-}
+}*/
+

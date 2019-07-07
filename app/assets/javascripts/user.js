@@ -20,9 +20,10 @@ $(document).on('turbolinks:load', function() {
     var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                   <input name='group[user_ids][]' type='hidden' value='${user_id}'>
                   <p class='chat-group-user__name'>${name}</p>
+
                   <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
                 </div>`
-    $("#add-chat-members").append(html);
+    $("#chat-group-users").append(html);
   }
 
   $("#user-search-field").on("keyup", function(e) {
@@ -39,7 +40,9 @@ $(document).on('turbolinks:load', function() {
       $('#user-search-result').empty();
       if (users.length !== 0) {
         users.forEach(function(user){
+          if (input.length !== 0) {
           appendUser(user);
+          }
         });
       }
       else {
@@ -59,7 +62,7 @@ $(function(){
     appendChatMembers(name, user_id);
   });
 
-  $("#add-chat-members").on("click", ".user-search-remove", function(){
+  $("#chat-group-users").on("click", ".user-search-remove", function(){
     $(this).parent().remove();
   });
  });
