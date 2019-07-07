@@ -1,15 +1,15 @@
 $(document).on('turbolinks:load', function() {
   function buildCreate(message){
     var html = `<div class="message" data-message-id="${message.id}">
-                  <div class="up-message">
-                    <div class="up-message__user-name">
+                  <div class="upper-message">
+                    <div class="upper-message__user-name">
                       ${message.name}
                     </div>
-                    <div class="up-message__date">
+                    <div class="upper-message__date">
                       ${message.created_at}
                     </div>
                   </div>
-                  <div class="low-message">
+                  <div class="lower-meesage">
                     <p class="lower-message__content">
                       ${message.content}
                     </p>
@@ -22,18 +22,18 @@ $(document).on('turbolinks:load', function() {
   }
 
   function buildHTML(message) {
-    image = (message.image) ? `<img class="lower-message__image" src=${message.image} >` : "";
+    image = (message.image) ? `<img class="lower-message__image" src=${message.image}>` : "";
 
     var html = `<div class="message" data-message-id="${message.id}"> 
-                  <div class="up-message">
-                    <div class="up-message__user-name">
-                      ${message.user_name}
+                  <div class="upper-message">
+                    <div class="upper-message__user-name">
+                      ${message.name}
                     </div>
-                    <div class="up-message__date">
+                    <div class="upper-message__date">
                       ${message.created_at}
                     </div>
                   </div>
-                  <div class="low-meesage">
+                  <div class="lower-meesage">
                     <p class="lower-message__content">
                       ${message.content}
                     </p>
@@ -56,7 +56,7 @@ $(document).on('turbolinks:load', function() {
       contentType: false
     })
     .done(function(message){
-      var html = buildCreate(message);
+      var html = buildHTML(message);
       $('.messages').append(html);
       $('.form__submit').removeAttr("disabled");
       $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight}, 'fast');

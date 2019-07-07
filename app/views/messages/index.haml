@@ -1,26 +1,7 @@
 .wrapper
 
-  .side-bar
-    .header
-      %h3.header__name
-        = current_user.name
-      %ul.header__lists
-        %li.list
-          = link_to edit_user_path(:id), data: {"turbolinks"=> false} do
-            %i.fa.fa-cog
-        %li.list
-          = link_to new_group_path do
-            %i.fa.fa-edit
-      
-    .groups
-      .group
-      - current_user.groups.each do |group|
-        = link_to group_messages_path(group) do
-          .group__name
-            = group.name
-          .group__message
-            = group.show_last_message
-  
+  = render 'devise/shared/side_bar'
+
   .chat
     .header
       .left-header
@@ -32,19 +13,18 @@
             = member.name
       .right-header
         .right-header__button
-          = link_to "Edit", edit_group_path(params[:group_id]), method: :get, class: 'edit__button'
-        
+          = link_to "Edit", edit_group_path(params[:group_id]), method: :get, class: 'right-header__button'
 
     .messages
       = render @messages
-    .groupBox__footer
-      .groupBox__footer__white
-        //以下、カリキュラムを参考
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-          .form__mask
-            = f.label :image, class: 'form__mask__image' do
-              = fa_icon 'picture-o', class: 'icon'
-              =f.file_field :image, class: 'hidden'
-          =f.submit 'Send', class: 'form__submit'
+      
+    .form
+      //以下、カリキュラムを参考
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            =f.file_field :image, class: 'hidden'
+        =f.submit 'Send', class: 'form__submit'
 
